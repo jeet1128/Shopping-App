@@ -1,7 +1,8 @@
 package com.shopping;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
 
 
 
@@ -60,6 +61,39 @@ void setInvalidQuantityThrowsError()
     assertThrows(IllegalArgumentException.class, ()-> {
         item.setQuantity(0);
     });
+}
+
+@Test
+
+void minimumValidPriceShouldBeAccepted()
+{
+    CartItem item = new CartItem("Book", 1.0, 1);
+
+    assertEquals(1.0, item.getPrice());
+}
+
+@Test
+void maximumValidPriceShouldBeAccepted()
+{
+    CartItem item = new CartItem("Car", 99999.99, 1);
+
+    assertEquals(99999.99, item.getPrice());
+
+}
+@Test
+void quantityOneShouldBeAccepted()
+{
+    CartItem item = new CartItem("Book", 10.0, 1);
+    assertEquals(1, item.getQuantity());
+}
+
+@Test
+void setQuantityOneShouldBeAccepted()
+{
+    CartItem item = new CartItem("Book", 10.0, 5);
+
+    item.setQuantity(1);
+    assertEquals(1, item.getQuantity());
 }
 
 }

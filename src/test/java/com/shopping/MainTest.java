@@ -1,7 +1,8 @@
 package com.shopping;
-import org.junit.jupiter.api.Test;
 import java.io.ByteArrayInputStream;
+
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
+import org.junit.jupiter.api.Test;
 
 class MainTest{
     @Test
@@ -75,5 +76,34 @@ class MainTest{
              System.setIn(new ByteArrayInputStream(input.getBytes()));
 
              assertDoesNotThrow(() -> Main.main(new String[]{}));
+    }
+
+    @Test
+    void standardShippingFlowWorks()
+    {
+        String input =
+        "John\n" +
+        "IL\n" +
+        "1\n" +
+        "6\n";
+
+        System.setIn(new java.io.ByteArrayInputStream(input.getBytes()));
+
+        Main.main(new String[]{});
+
+    }
+
+    @Test
+    void nextDayShippingFlowWorks()
+    {
+        String input = 
+        "John\n" +
+        "IL\n" +
+        "2\n" +
+        "6\n";
+
+        System.setIn(new java.io.ByteArrayInputStream(input.getBytes()));
+
+        Main.main(new String[]{});
     }
 }

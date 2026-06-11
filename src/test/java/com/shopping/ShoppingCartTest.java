@@ -148,4 +148,31 @@ void removeItemWithInvalidItemNumberThrowsError()
 });
 }
 
+@Test
+void addItemPrintsConfirmationMessage()
+{
+    ShoppingCart cart = new ShoppingCart();
+
+    java.io.ByteArrayOutputStream output = new java.io.ByteArrayOutputStream();
+    System.setOut(new java.io.PrintStream(output));
+
+    cart.addItem("Book", 10.0, 2);
+
+    assertTrue(output.toString().contains("Item added. Total items: 2"));
+}
+
+@Test
+void viewCartPrintsCorrectItemNumber()
+{
+    ShoppingCart cart = new ShoppingCart();
+
+    cart.addItem("Book", 10.0, 2);
+
+    java.io.ByteArrayOutputStream output = new java.io.ByteArrayOutputStream();
+    System.setOut(new java.io.PrintStream(output));
+
+    cart.viewCart();
+    assertTrue(output.toString().contains("1. Book"));
+}
+
 }
