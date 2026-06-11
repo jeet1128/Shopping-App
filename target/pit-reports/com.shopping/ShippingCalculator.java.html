@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <link rel="stylesheet" type="text/css" href="../style.css">
+</head>
+<body>
+
+
+<h1>ShippingCalculator.java</h1>
+
+<table class="src">
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@147e0734_1'/>
+1
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@147e0734_1'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>package com.shopping;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@147e0734_2'/>
+2
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@147e0734_2'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@147e0734_3'/>
+3
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@147e0734_3'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>public class ShippingCalculator {</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@147e0734_4'/>
+4
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@147e0734_4'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    public static double calculateShipping(ShippingOption option, double subtotal) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@147e0734_5'/>
+5
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@147e0734_5'>1</a>
+<span>
+
+1. calculateShipping : negated conditional &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        if (option == ShippingOption.STANDARD) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@147e0734_6'/>
+6
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@147e0734_6'>3</a>
+<span>
+
+1. calculateShipping : replaced double return with 0.0d for com/shopping/ShippingCalculator::calculateShipping &rarr; KILLED<br/>
+
+2. calculateShipping : changed conditional boundary &rarr; KILLED<br/>
+
+3. calculateShipping : negated conditional &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            return subtotal &#62; 50 ? 0.0 : 10.0;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@147e0734_7'/>
+7
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@147e0734_7'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        }</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@147e0734_8'/>
+8
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@147e0734_8'>1</a>
+<span>
+
+1. calculateShipping : replaced double return with 0.0d for com/shopping/ShippingCalculator::calculateShipping &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        return 25.0;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@147e0734_9'/>
+9
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@147e0734_9'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@147e0734_10'/>
+10
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@147e0734_10'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>}</span></pre></td></tr>
+
+
+
+<tr><td></td><td></td><td><h2>Mutations</h2></td></tr>
+
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@147e0734_5'>5</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@147e0734_5'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>calculateShipping<br/><b>Killed by : </b>com.shopping.ShippingCalculatorTest.[engine:junit-jupiter]/[class:com.shopping.ShippingCalculatorTest]/[method:standardShippingOverFiftyIsFree()]</span></span> negated conditional &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@147e0734_6'>6</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@147e0734_6'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>calculateShipping<br/><b>Killed by : </b>com.shopping.ShippingCalculatorTest.[engine:junit-jupiter]/[class:com.shopping.ShippingCalculatorTest]/[method:standardShippingUnderOrEqualFiftyCostsTen()]</span></span> replaced double return with 0.0d for com/shopping/ShippingCalculator::calculateShipping &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>calculateShipping<br/><b>Killed by : </b>com.shopping.ShippingCalculatorTest.[engine:junit-jupiter]/[class:com.shopping.ShippingCalculatorTest]/[method:standardShippingUnderOrEqualFiftyCostsTen()]</span></span> changed conditional boundary &rarr; KILLED</p> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>calculateShipping<br/><b>Killed by : </b>com.shopping.ShippingCalculatorTest.[engine:junit-jupiter]/[class:com.shopping.ShippingCalculatorTest]/[method:standardShippingOverFiftyIsFree()]</span></span> negated conditional &rarr; KILLED</p> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@147e0734_8'>8</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@147e0734_8'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>calculateShipping<br/><b>Killed by : </b>com.shopping.ShippingCalculatorTest.[engine:junit-jupiter]/[class:com.shopping.ShippingCalculatorTest]/[method:nextDayShippingAlwaysCostsTwentyFive()]</span></span> replaced double return with 0.0d for com/shopping/ShippingCalculator::calculateShipping &rarr; KILLED</p> 
+</td>
+</tr>
+
+</table>
+
+
+<h2>Active mutators</h2>
+<ul>
+
+<li class='mutator'>CONDITIONALS_BOUNDARY</li>
+
+<li class='mutator'>EMPTY_RETURNS</li>
+
+<li class='mutator'>FALSE_RETURNS</li>
+
+<li class='mutator'>INCREMENTS</li>
+
+<li class='mutator'>INVERT_NEGS</li>
+
+<li class='mutator'>MATH</li>
+
+<li class='mutator'>NEGATE_CONDITIONALS</li>
+
+<li class='mutator'>NULL_RETURNS</li>
+
+<li class='mutator'>PRIMITIVE_RETURNS</li>
+
+<li class='mutator'>TRUE_RETURNS</li>
+
+<li class='mutator'>VOID_METHOD_CALLS</li>
+
+</ul>
+
+<h2>Tests examined</h2>
+<ul>
+<li>com.shopping.ShippingCalculatorTest.[engine:junit-jupiter]/[class:com.shopping.ShippingCalculatorTest]/[method:standardShippingOverFiftyIsFree()] (0 ms)</li><li>com.shopping.ShippingCalculatorTest.[engine:junit-jupiter]/[class:com.shopping.ShippingCalculatorTest]/[method:standardShippingUnderOrEqualFiftyCostsTen()] (1 ms)</li><li>com.shopping.ShoppingCartTest.[engine:junit-jupiter]/[class:com.shopping.ShoppingCartTest]/[method:totalIncludesFreeStandardShippingOverFifty()] (0 ms)</li><li>com.shopping.ShoppingCartTest.[engine:junit-jupiter]/[class:com.shopping.ShoppingCartTest]/[method:totalIncludesIllinoisTaxAndStandardShipping()] (1 ms)</li><li>com.shopping.MainTest.[engine:junit-jupiter]/[class:com.shopping.MainTest]/[method:addItemViewTotalAndCheckoutFlowRunsWithoutException()] (30 ms)</li><li>com.shopping.ShippingCalculatorTest.[engine:junit-jupiter]/[class:com.shopping.ShippingCalculatorTest]/[method:nextDayShippingAlwaysCostsTwentyFive()] (5 ms)</li><li>com.shopping.ShoppingCartTest.[engine:junit-jupiter]/[class:com.shopping.ShoppingCartTest]/[method:totalIncludesNextDayShipping()] (0 ms)</li><li>com.shopping.MainTest.[engine:junit-jupiter]/[class:com.shopping.MainTest]/[method:nextDayShippingFlowRunsWithoutException()] (5 ms)</li>
+</ul>
+
+<br/>
+
+Report generated by <a href='https://pitest.org'>PIT</a> 1.15.8
+
+</body>
+</html>

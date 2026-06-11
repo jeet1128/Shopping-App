@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Main.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">shopping-app</a> &gt; <a href="index.source.html" class="el_package">com.shopping</a> &gt; <span class="el_source">Main.java</span></div><h1>Main.java</h1><pre class="source lang-java linenums">package com.shopping;
+
+import java.util.Scanner;
+
+<span class="nc" id="L5">public class Main {</span>
+    public static void main(String[] args) {
+<span class="fc" id="L7">        Scanner sc = new Scanner(System.in);</span>
+<span class="fc" id="L8">        ShoppingCart cart = new ShoppingCart();</span>
+
+<span class="fc" id="L10">        System.out.print(&quot;Enter Name: &quot;);</span>
+<span class="fc" id="L11">        String name = sc.nextLine();</span>
+
+<span class="fc" id="L13">        System.out.print(&quot;Enter State: &quot;);</span>
+<span class="fc" id="L14">        String state = sc.nextLine();</span>
+
+       
+<span class="fc" id="L17">       System.out.println(&quot;Choose Shipping Option&quot;);</span>
+<span class="fc" id="L18">       System.out.println(&quot;1. Standard&quot;);</span>
+<span class="fc" id="L19">        System.out.println(&quot;2. Next_Day&quot;);</span>
+<span class="fc" id="L20">        System.out.println(&quot;Enter choice:&quot;);</span>
+
+<span class="fc" id="L22">        int shippingChoice = sc.nextInt();</span>
+
+        ShippingOption option;
+
+<span class="fc bfc" id="L26" title="All 2 branches covered.">        if(shippingChoice == 1)</span>
+        {
+<span class="fc" id="L28">            option = ShippingOption.STANDARD;</span>
+        
+<span class="fc" id="L30">        }</span>
+           else{
+<span class="fc" id="L32">            option = ShippingOption.NEXT_DAY;</span>
+           }
+
+<span class="nc" id="L35">        while (true) {</span>
+<span class="fc" id="L36">            System.out.println(&quot;\n1.Add 2.Total 3.View 4.Edit 5.Remove 6.Checkout&quot;);</span>
+<span class="fc" id="L37">            int ch = sc.nextInt();</span>
+
+<span class="pc bpc" id="L39" title="1 of 7 branches missed.">            switch (ch) {</span>
+                case 1:
+<span class="fc" id="L41">                    sc.nextLine();</span>
+<span class="fc" id="L42">                    System.out.print(&quot;Item: &quot;);</span>
+<span class="fc" id="L43">                    String item = sc.nextLine();</span>
+<span class="fc" id="L44">                    System.out.print(&quot;Price: &quot;);</span>
+<span class="fc" id="L45">                    double p = sc.nextDouble();</span>
+<span class="fc" id="L46">                    System.out.print(&quot;Qty: &quot;);</span>
+<span class="fc" id="L47">                    int q = sc.nextInt();</span>
+<span class="fc" id="L48">                    cart.addItem(item,p,q);</span>
+<span class="fc" id="L49">                    break;</span>
+
+                case 2:
+<span class="fc" id="L52">                    System.out.println(&quot;Total: &quot;+cart.getTotal(state, option));</span>
+<span class="fc" id="L53">                    break;</span>
+
+                case 3:
+<span class="fc" id="L56">                    cart.viewCart();</span>
+<span class="fc" id="L57">                    break;</span>
+
+                case 4:
+<span class="fc" id="L60">                    System.out.print(&quot;Item no: &quot;);</span>
+<span class="fc" id="L61">                    int i = sc.nextInt();</span>
+<span class="fc" id="L62">                    System.out.print(&quot;New qty: &quot;);</span>
+<span class="fc" id="L63">                    int nq = sc.nextInt();</span>
+<span class="fc" id="L64">                    cart.editQuantity(i,nq);</span>
+<span class="fc" id="L65">                    break;</span>
+
+                case 5:
+<span class="fc" id="L68">                    System.out.print(&quot;Item no: &quot;);</span>
+<span class="fc" id="L69">                    cart.removeItem(sc.nextInt());</span>
+<span class="fc" id="L70">                    break;</span>
+
+                case 6:
+<span class="fc" id="L73">                    System.out.println(&quot;Transaction completed&quot;);</span>
+<span class="fc" id="L74">                    return;</span>
+            }
+        }
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.12.202403310830</span></div></body></html>
