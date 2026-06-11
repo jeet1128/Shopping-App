@@ -2,6 +2,7 @@ package com.shopping;
 
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class TaxCalculatorTest{
 
@@ -37,4 +38,11 @@ class TaxCalculatorTest{
     {
         assertEquals(6.0, TaxCalculator.calculateTax("il", 100.0));
     }
+
+    @Test
+    void taxCalculatorCanBeCreated()
+{
+    TaxCalculator calculator = new TaxCalculator();
+    assertTrue(calculator !=null);
+}
 }

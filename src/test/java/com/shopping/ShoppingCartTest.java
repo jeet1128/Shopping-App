@@ -94,12 +94,14 @@ void totalIncludesNextDayShipping()
 }
 
 @Test
-void viewEmptyCartrintsEmptyMessage()
+void viewEmptyCartPrintsEmptyMessage()
 {
-    ShoppingCart cart = new ShoppingCart();
+    
 
     java.io.ByteArrayOutputStream output = new java.io.ByteArrayOutputStream();
-    System.setOut(new java.io.PrintStream(output));
+    //System.setOut(new java.io.PrintStream(output));
+
+    ShoppingCart cart = new ShoppingCart(new java.io.PrintStream(output));
 
     cart.viewCart();
 
@@ -109,11 +111,13 @@ void viewEmptyCartrintsEmptyMessage()
 @Test
 void viewCartPrintsItemDetails()
 {
-    ShoppingCart cart = new ShoppingCart();
-    cart.addItem("Book", 10.0, 2);
+    
 
     java.io.ByteArrayOutputStream output = new java.io.ByteArrayOutputStream();
-    System.setOut(new java.io.PrintStream(output));
+   // System.setOut(new java.io.PrintStream(output));
+
+   ShoppingCart cart = new ShoppingCart(new java.io.PrintStream(output));
+    cart.addItem("Book", 10.0, 2);
 
     cart.viewCart();
 
@@ -151,10 +155,11 @@ void removeItemWithInvalidItemNumberThrowsError()
 @Test
 void addItemPrintsConfirmationMessage()
 {
-    ShoppingCart cart = new ShoppingCart();
-
+   
     java.io.ByteArrayOutputStream output = new java.io.ByteArrayOutputStream();
-    System.setOut(new java.io.PrintStream(output));
+    //System.setOut(new java.io.PrintStream(output));
+ ShoppingCart cart = new ShoppingCart(new java.io.PrintStream(output));
+
 
     cart.addItem("Book", 10.0, 2);
 
@@ -164,15 +169,35 @@ void addItemPrintsConfirmationMessage()
 @Test
 void viewCartPrintsCorrectItemNumber()
 {
-    ShoppingCart cart = new ShoppingCart();
+    
 
-    cart.addItem("Book", 10.0, 2);
 
     java.io.ByteArrayOutputStream output = new java.io.ByteArrayOutputStream();
-    System.setOut(new java.io.PrintStream(output));
+    //System.setOut(new java.io.PrintStream(output));
+    ShoppingCart cart = new ShoppingCart(new java.io.PrintStream(output));
+    
+    cart.addItem("Book", 10.0, 2);
 
     cart.viewCart();
     assertTrue(output.toString().contains("1. Book"));
 }
+@Test
+void viewCartShowsCorrectNumberForSecondItem()
+{
+    java.io.ByteArrayOutputStream output =
+            new java.io.ByteArrayOutputStream();
 
+    ShoppingCart cart =
+            new ShoppingCart(new java.io.PrintStream(output));
+
+    cart.addItem("Book", 10.0, 1);
+    cart.addItem("Pen", 2.0, 1);
+
+    cart.viewCart();
+
+    String text = output.toString();
+
+    assertTrue(text.contains("1. Book"));
+    assertTrue(text.contains("2. Pen"));
+}
 }

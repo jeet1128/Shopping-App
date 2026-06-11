@@ -1,6 +1,7 @@
 package com.shopping;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 import org.junit.jupiter.api.Test;
 
 class ShippingCalculatorTest{
@@ -19,5 +20,12 @@ class ShippingCalculatorTest{
     @Test
     void nextDayShippingAlwaysCostsTwentyFive() {
         assertEquals(25.0, ShippingCalculator.calculateShipping(ShippingOption.NEXT_DAY, 100.0));
+    }
+
+    @Test
+    void shippingCalculatorCanBeCreated()
+    {
+        ShippingCalculator calculator = new ShippingCalculator();
+        assertTrue(calculator !=null);
     }
 }

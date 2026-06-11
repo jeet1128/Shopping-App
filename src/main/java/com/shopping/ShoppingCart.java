@@ -1,13 +1,24 @@
 package com.shopping;
 
-import java.util.*;
+import java.io.PrintStream;
+import java.util.ArrayList;
+import java.util.List;
 
 public class ShoppingCart {
     private List<CartItem> items = new ArrayList<>();
+    private PrintStream out;
+
+    public ShoppingCart() {
+        this(System.out);
+    }
+
+    public ShoppingCart(PrintStream out) {
+        this.out = out;
+    }
 
     public void addItem(String name, double price, int quantity) {
         items.add(new CartItem(name, price, quantity));
-        System.out.println("Item added. Total items: " + getItemCount());
+        out.println("Item added. Total items: " + getItemCount());
     }
 
     public int getItemCount() {
@@ -20,26 +31,29 @@ public class ShoppingCart {
 
     public void viewCart() {
         if (items.isEmpty()) {
-            System.out.println("Cart is empty.");
+            out.println("Cart is empty.");
             return;
         }
+
         for (int i = 0; i < items.size(); i++) {
             CartItem i1 = items.get(i);
-            System.out.println((i+1)+". "+i1.getItemName()+" | Qty: "+i1.getQuantity()+" | $"+i1.getTotalPrice());
+            out.println((i + 1) + ". " + i1.getItemName()
+                    + " | Qty: " + i1.getQuantity()
+                    + " | $" + i1.getTotalPrice());
         }
     }
 
     public void editQuantity(int index, int qty) {
-        items.get(index-1).setQuantity(qty);
+        items.get(index - 1).setQuantity(qty);
     }
 
     public void removeItem(int index) {
-        items.remove(index-1);
+        items.remove(index - 1);
     }
 
     public double getTotal(String state, ShippingOption option) {
         double sub = getSubtotal();
-        return sub + TaxCalculator.calculateTax(state, sub) +
-                ShippingCalculator.calculateShipping(option, sub);
+        return sub + TaxCalculator.calculateTax(state, sub)
+                + ShippingCalculator.calculateShipping(option, sub);
     }
 }
